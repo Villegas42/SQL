@@ -1,0 +1,35 @@
+--Create a Tabletop Accessory Store database
+
+CREATE TABLE Store (id INTEGER PRIMARY KEY, item TEXT, Quantity INTEGER, price INTEGER, material TEXT);
+
+INSERT INTO store VALUES (1, "Bear Skull Dice Tray", 12, 40, "PLA");
+INSERT INTO store VALUES (2,"Fantasy Tree Dice Tower", 6, 50, "Resin");
+INSERT INTO store VALUES (3,"Mimic Dice Tray", 3, 40, "Clay");
+INSERT INTO store VALUES (4,"Time Out Dice Jail", 10, 15, "PLA" );
+INSERT INTO store VALUES (5,"Shortsword Dice Holder", 14, 20, "Pleather/Metal/PLA");
+INSERT INTO store VALUES (6, "Printable Item Cards", "1,000,000", 10, "Digital");
+INSERT INTO store VALUES (7, "Player Cheat Sheet", "1,000,000", 8, "Digital");
+INSERT INTO store VALUES (8, "Bounty Posters", "1,000,000", 8, "Digital");
+INSERT INTO store VALUES (9, "Inspiration Token Tracker", "42", 19, "Wood");
+INSERT INTO store VALUES (10, "Dice Timeout Chair", 16, 15, "PLA");
+INSERT INTO store VALUES (11, "Castle Dice Tower", 4, 28, "PLA");
+INSERT INTO store VALUES (12, "Potion Dice Holder", 17, 22, "PLA");
+INSERT INTO store VALUES (13, "Dice Tome Holder", 19, 24, "PLA");
+INSERT INTO store VALUES (14, "Bow Dice Holder", 5, 15, "PLA");
+INSERT INTO store VALUES (15, "Holy symbol Dice Purifier", 12, 20, "Resin");
+
+--Display the database ordered by price. 
+SELECT * 
+FROM store
+ORDER BY price;
+
+--What are the products that will appeal to somebody with a smaller budget?
+SELECT item, price
+FROM store WHERE price < 20
+ORDER BY price asc;
+
+--Display products that are priced on the higher end.
+SELECT item, price
+FROM store WHERE price > 20
+ORDER BY price asc;
+
